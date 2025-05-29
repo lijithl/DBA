@@ -1,0 +1,945 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lijith Lakshmanan - Senior Database Administrator</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+
+        /* Navigation */
+        nav {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 1rem 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 2rem;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #2563eb;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .logo::before {
+            content: "🗄️";
+            font-size: 1.2rem;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #333;
+            font-weight: 500;
+            transition: color 0.3s ease;
+            padding: 0.5rem 1rem;
+            border-radius: 6px;
+        }
+
+        .nav-links a:hover {
+            color: #2563eb;
+            background: rgba(37, 99, 235, 0.1);
+        }
+
+        /* Main Container */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        /* Hero Section */
+        .hero {
+            margin-top: 80px;
+            padding: 4rem 0;
+            text-align: center;
+            color: white;
+        }
+
+        .hero-content {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 3rem;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .profile-image {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            background: linear-gradient(45deg, #4f46e5, #06b6d4);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 2rem;
+            font-size: 4rem;
+            color: white;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 0.5rem;
+            font-weight: 700;
+        }
+
+        .hero .subtitle {
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+            opacity: 0.9;
+        }
+
+        .hero .location {
+            font-size: 1rem;
+            opacity: 0.8;
+            margin-bottom: 2rem;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 0.8rem 2rem;
+            border: none;
+            border-radius: 8px;
+            font-weight: 600;
+            text-decoration: none;
+            display: inline-block;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .btn-primary {
+            background: #2563eb;
+            color: white;
+        }
+
+        .btn-secondary {
+            background: rgba(255, 255, 255, 0.2);
+            color: white;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Sections */
+        .section {
+            background: white;
+            margin: 2rem 0;
+            border-radius: 15px;
+            padding: 3rem;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .section h2 {
+            font-size: 2.2rem;
+            margin-bottom: 2rem;
+            color: #1e293b;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .section h2::before {
+            width: 4px;
+            height: 40px;
+            background: linear-gradient(45deg, #2563eb, #06b6d4);
+            content: '';
+            border-radius: 2px;
+        }
+
+        /* Skills Grid */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .skill-card {
+            background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+            padding: 2rem;
+            border-radius: 12px;
+            text-align: center;
+            transition: transform 0.3s ease;
+            border: 1px solid #e2e8f0;
+        }
+
+        .skill-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+
+        .skill-card .icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .skill-card h3 {
+            color: #1e293b;
+            margin-bottom: 1rem;
+        }
+
+        /* Experience Timeline */
+        .experience-item {
+            border-left: 4px solid #2563eb;
+            padding-left: 2rem;
+            margin-bottom: 2rem;
+            position: relative;
+        }
+
+        .experience-item::before {
+            content: '';
+            width: 12px;
+            height: 12px;
+            background: #2563eb;
+            border-radius: 50%;
+            position: absolute;
+            left: -8px;
+            top: 0;
+        }
+
+        .experience-item h3 {
+            color: #1e293b;
+            font-size: 1.3rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .experience-item .duration {
+            color: #64748b;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+
+        /* Services Grid */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+
+        .service-card {
+            background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%);
+            padding: 2rem;
+            border-radius: 12px;
+            border: 1px solid #e2e8f0;
+            transition: all 0.3s ease;
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+            border-color: #2563eb;
+        }
+
+        .service-card .icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: #2563eb;
+        }
+
+        /* Pricing Tables */
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .pricing-card {
+            background: white;
+            border: 2px solid #e2e8f0;
+            border-radius: 15px;
+            padding: 2rem;
+            text-align: center;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .pricing-card.featured {
+            border-color: #2563eb;
+            transform: scale(1.05);
+        }
+
+        .pricing-card.featured::before {
+            content: 'Most Popular';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: #2563eb;
+            color: white;
+            padding: 0.5rem;
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+
+        .pricing-card:hover {
+            border-color: #2563eb;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+        }
+
+        .pricing-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: #1e293b;
+        }
+
+        .pricing-card .price {
+            font-size: 3rem;
+            font-weight: bold;
+            color: #2563eb;
+            margin-bottom: 0.5rem;
+        }
+
+        .pricing-card .period {
+            color: #64748b;
+            margin-bottom: 2rem;
+        }
+
+        .pricing-features {
+            list-style: none;
+            margin-bottom: 2rem;
+        }
+
+        .pricing-features li {
+            padding: 0.5rem 0;
+            border-bottom: 1px solid #f1f5f9;
+        }
+
+        .pricing-features li::before {
+            content: '✓';
+            color: #10b981;
+            font-weight: bold;
+            margin-right: 0.5rem;
+        }
+
+        /* Testimonials */
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+        }
+
+        .testimonial-card {
+            background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+            padding: 2rem;
+            border-radius: 12px;
+            border-left: 4px solid #2563eb;
+            position: relative;
+        }
+
+        .testimonial-card::before {
+            content: '"';
+            font-size: 4rem;
+            color: #2563eb;
+            position: absolute;
+            top: -10px;
+            left: 1rem;
+            opacity: 0.3;
+        }
+
+        .testimonial-author {
+            margin-top: 1rem;
+            font-weight: 600;
+            color: #1e293b;
+        }
+
+        .testimonial-role {
+            color: #64748b;
+            font-size: 0.9rem;
+        }
+
+        /* Contact Form */
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: start;
+        }
+
+        .contact-info {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 2rem;
+            border-radius: 12px;
+        }
+
+        .contact-info h3 {
+            margin-bottom: 2rem;
+            font-size: 1.5rem;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+            padding: 1rem;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 8px;
+        }
+
+        .contact-item .icon {
+            font-size: 1.5rem;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+            color: #1e293b;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 0.8rem;
+            border: 2px solid #e2e8f0;
+            border-radius: 8px;
+            font-size: 1rem;
+            transition: border-color 0.3s ease;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: #2563eb;
+        }
+
+        .form-group textarea {
+            height: 120px;
+            resize: vertical;
+        }
+
+        /* Footer */
+        footer {
+            background: #1e293b;
+            color: white;
+            text-align: center;
+            padding: 2rem 0;
+            margin-top: 3rem;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .hero .subtitle {
+                font-size: 1.1rem;
+            }
+
+            .cta-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .pricing-card.featured {
+                transform: none;
+            }
+
+            .section {
+                padding: 2rem;
+            }
+        }
+
+        /* Smooth scrolling */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Section spacing */
+        .section + .section {
+            margin-top: 2rem;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-container">
+            <div class="logo">Lijith Lakshmanan</div>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#pricing">Pricing</a></li>
+                <li><a href="#testimonials">Testimonials</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <div class="profile-image">
+                    👨‍💻
+                </div>
+                <h1>Lijith Lakshmanan</h1>
+                <p class="subtitle">Senior Database Administrator / Developer (SQL Server)</p>
+                <p class="location">📍 Bangalore, India</p>
+                <p style="font-size: 1.1rem; margin-bottom: 2rem; opacity: 0.9;">
+                    9 years of expertise in SQL Server database administration, optimization, and development. 
+                    Transforming data challenges into scalable solutions for leading MNCs.
+                </p>
+                <div class="cta-buttons">
+                    <a href="#contact" class="btn btn-primary">Get In Touch</a>
+                    <a href="#about" class="btn btn-secondary">Learn More</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="container">
+        <!-- About Section -->
+        <section id="about" class="section">
+            <h2>About Me</h2>
+            <div style="display: grid; grid-template-columns: 1fr; gap: 2rem;">
+                <div>
+                    <p style="font-size: 1.1rem; margin-bottom: 2rem; color: #475569;">
+                        With 9 years of dedicated experience in the software services industry, I specialize in SQL Server database administration and development. I've had the privilege of working with leading multinational corporations, delivering robust database solutions that drive business success.
+                    </p>
+                    
+                    <div class="skills-grid">
+                        <div class="skill-card">
+                            <div class="icon">🛠️</div>
+                            <h3>Performance Tuning</h3>
+                            <p>Optimizing database performance for maximum efficiency and reduced query response times.</p>
+                        </div>
+                        <div class="skill-card">
+                            <div class="icon">🔒</div>
+                            <h3>Security & Backup</h3>
+                            <p>Implementing robust security protocols and comprehensive backup/recovery strategies.</p>
+                        </div>
+                        <div class="skill-card">
+                            <div class="icon">🔄</div>
+                            <h3>Database Migration</h3>
+                            <p>Seamless database migrations with zero downtime and data integrity preservation.</p>
+                        </div>
+                        <div class="skill-card">
+                            <div class="icon">☁️</div>
+                            <h3>Cloud Integration</h3>
+                            <p>Azure-certified professional specializing in cloud database solutions and hybrid architectures.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div style="margin-top: 3rem;">
+                <h3 style="color: #1e293b; margin-bottom: 1.5rem; font-size: 1.5rem;">Experience & Expertise</h3>
+                <div class="experience-item">
+                    <h3>Senior Database Administrator / Developer</h3>
+                    <div class="duration">2015 - Present | 9 Years</div>
+                    <p>Leading database administration initiatives across multiple industry verticals, working with Fortune 500 companies to optimize their data infrastructure. Specialized in SQL Server environments with extensive cloud integration experience.</p>
+                </div>
+            </div>
+
+            <div style="margin-top: 3rem;">
+                <h3 style="color: #1e293b; margin-bottom: 1.5rem; font-size: 1.5rem;">Certifications & Technologies</h3>
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem;">
+                    <div style="background: #f1f5f9; padding: 1rem; border-radius: 8px; text-align: center;">
+                        <strong>Azure DP-300</strong><br>
+                        <small>Azure Database Administrator</small>
+                    </div>
+                    <div style="background: #f1f5f9; padding: 1rem; border-radius: 8px; text-align: center;">
+                        <strong>MongoDB</strong><br>
+                        <small>NoSQL Database Expert</small>
+                    </div>
+                    <div style="background: #f1f5f9; padding: 1rem; border-radius: 8px; text-align: center;">
+                        <strong>Power BI</strong><br>
+                        <small>Data Visualization</small>
+                    </div>
+                    <div style="background: #f1f5f9; padding: 1rem; border-radius: 8px; text-align: center;">
+                        <strong>SSIS</strong><br>
+                        <small>Integration Services</small>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Services Section -->
+        <section id="services" class="section">
+            <h2>Services</h2>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="icon">🔍</div>
+                    <h3>Database Consulting</h3>
+                    <p>Strategic database architecture consulting to align your data infrastructure with business objectives. Comprehensive analysis and recommendations for optimal database design.</p>
+                </div>
+                <div class="service-card">
+                    <div class="icon">⚡</div>
+                    <h3>Performance Optimization</h3>
+                    <p>Advanced performance tuning techniques to enhance database speed and efficiency. Query optimization, indexing strategies, and resource utilization improvements.</p>
+                </div>
+                <div class="service-card">
+                    <div class="icon">🚀</div>
+                    <h3>Database Migration</h3>
+                    <p>Seamless database migration services with minimal downtime. From legacy systems to modern cloud platforms, ensuring data integrity throughout the process.</p>
+                </div>
+                <div class="service-card">
+                    <div class="icon">🎓</div>
+                    <h3>Training & Development</h3>
+                    <p>Comprehensive training programs for database administrators and developers. Customized curriculum covering SQL Server, Azure, and best practices.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Pricing Section -->
+        <section id="pricing" class="section">
+            <h2>Pricing Plans</h2>
+            <div class="pricing-grid">
+                <div class="pricing-card">
+                    <h3>Consultation</h3>
+                    <div class="price">$150</div>
+                    <div class="period">per hour</div>
+                    <ul class="pricing-features">
+                        <li>Database Assessment</li>
+                        <li>Performance Analysis</li>
+                        <li>Strategic Recommendations</li>
+                        <li>Architecture Review</li>
+                        <li>Best Practices Guidance</li>
+                    </ul>
+                    <a href="#contact" class="btn btn-primary" style="width: 100%;">Get Started</a>
+                </div>
+
+                <div class="pricing-card featured">
+                    <h3>Optimization Package</h3>
+                    <div class="price">$2,500</div>
+                    <div class="period">per project</div>
+                    <ul class="pricing-features">
+                        <li>Complete Performance Audit</li>
+                        <li>Query Optimization</li>
+                        <li>Index Strategy Implementation</li>
+                        <li>30-day Support</li>
+                        <li>Performance Monitoring Setup</li>
+                        <li>Documentation & Training</li>
+                    </ul>
+                    <a href="#contact" class="btn btn-primary" style="width: 100%;">Most Popular</a>
+                </div>
+
+                <div class="pricing-card">
+                    <h3>Migration Services</h3>
+                    <div class="price">$5,000</div>
+                    <div class="period">starting from</div>
+                    <ul class="pricing-features">
+                        <li>Migration Planning</li>
+                        <li>Data Transfer</li>
+                        <li>Testing & Validation</li>
+                        <li>Rollback Strategy</li>
+                        <li>Post-Migration Support</li>
+                        <li>Team Training</li>
+                    </ul>
+                    <a href="#contact" class="btn btn-primary" style="width: 100%;">Contact Us</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Testimonials Section -->
+        <section id="testimonials" class="section">
+            <h2>Client Testimonials</h2>
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <p>Lijith transformed our database performance completely. Our query response times improved by 70% after his optimization work. His expertise in SQL Server is exceptional, and his ability to explain complex concepts made the entire process smooth.</p>
+                    <div class="testimonial-author">Sarah Johnson</div>
+                    <div class="testimonial-role">IT Director, TechCorp Solutions</div>
+                </div>
+                <div class="testimonial-card">
+                    <p>The database migration project was handled flawlessly. Zero downtime, complete data integrity, and excellent post-migration support. Lijith's attention to detail and proactive communication made this our most successful migration ever.</p>
+                    <div class="testimonial-author">Michael Chen</div>
+                    <div class="testimonial-role">CTO, DataFlow Industries</div>
+                </div>
+                <div class="testimonial-card">
+                    <p>Working with Lijith was a game-changer for our team. His training sessions on Azure database services upskilled our entire development team. His real-world experience and practical approach to teaching is outstanding.</p>
+                    <div class="testimonial-author">Priya Sharma</div>
+                    <div class="testimonial-role">Lead Developer, InnovateTech</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="section">
+            <h2>Get In Touch</h2>
+            <div class="contact-grid">
+                <div class="contact-info">
+                    <h3>Let's Discuss Your Database Needs</h3>
+                    <p style="margin-bottom: 2rem; opacity: 0.9;">Ready to optimize your database infrastructure? I'm here to help you achieve peak performance and reliability.</p>
+                    
+                    <div class="contact-item">
+                        <div class="icon">📧</div>
+                        <div>
+                            <strong>Email</strong><br>
+                            lijith.lakshmanan@email.com
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <div class="icon">📱</div>
+                        <div>
+                            <strong>Phone</strong><br>
+                            +91 98765 43210
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <div class="icon">💼</div>
+                        <div>
+                            <strong>LinkedIn</strong><br>
+                            linkedin.com/in/lijith-lakshmanan
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <div class="icon">📍</div>
+                        <div>
+                            <strong>Location</strong><br>
+                            Bangalore, India
+                        </div>
+                    </div>
+                </div>
+
+                <form style="background: #f8fafc; padding: 2rem; border-radius: 12px;">
+                    <div class="form-group">
+                        <label for="name">Full Name</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="email">Email Address</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="company">Company Name</label>
+                        <input type="text" id="company" name="company">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="service">Service Interested In</label>
+                        <select id="service" name="service" style="width: 100%; padding: 0.8rem; border: 2px solid #e2e8f0; border-radius: 8px; font-size: 1rem;">
+                            <option value="">Select a service</option>
+                            <option value="consultation">Database Consultation</option>
+                            <option value="optimization">Performance Optimization</option>
+                            <option value="migration">Database Migration</option>
+                            <option value="training">Training & Development</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="message">Project Details</label>
+                        <textarea id="message" name="message" placeholder="Tell me about your database challenges and requirements..." required></textarea>
+                    </div>
+                    
+                    <button type="submit" class="btn btn-primary" style="width: 100%;">Send Message</button>
+                </form>
+            </div>
+        </section>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Lijith Lakshmanan. All rights reserved. | Senior Database Administrator / Developer</p>
+            <p style="margin-top: 0.5rem; opacity: 0.8;">Transforming data challenges into scalable solutions</p>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Form submission handler
+        document.querySelector('form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Get form data
+            const formData = new FormData(this);
+            const data = Object.fromEntries(formData);
+            
+            // Simple validation
+            if (!data.name || !data.email || !data.message) {
+                alert('Please fill in all required fields.');
+                return;
+            }
+            
+            // Simulate form submission
+            alert('Thank you for your message! I will get back to you within 24 hours.');
+            this.reset();
+        });
+
+        // Add animation on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        // Observe all sections
+        document.querySelectorAll('.section').forEach(section => {
+            section.style.opacity = '0';
+            section.style.transform = 'translateY(20px)';
+            section.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+            observer.observe(section);
+        });
+
+        // Mobile menu toggle functionality
+        const createMobileMenu = () => {
+            const nav = document.querySelector('.nav-container');
+            const navLinks = document.querySelector('.nav-links');
+            
+            // Create mobile menu button
+            const mobileMenuBtn = document.createElement('button');
+            mobileMenuBtn.innerHTML = '☰';
+            mobileMenuBtn.style.cssText = `
+                display: none;
+                background: none;
+                border: none;
+                font-size: 1.5rem;
+                cursor: pointer;
+                color: #333;
+                padding: 0.5rem;
+            `;
+            mobileMenuBtn.className = 'mobile-menu-btn';
+            
+            // Add mobile styles
+            const mobileStyles = document.createElement('style');
+            mobileStyles.textContent = `
+                @media (max-width: 768px) {
+                    .mobile-menu-btn {
+                        display: block !important;
+                    }
+                    .nav-links {
+                        display: none;
+                        position: absolute;
+                        top: 100%;
+                        left: 0;
+                        right: 0;
+                        background: white;
+                        flex-direction: column;
+                        box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+                        padding: 1rem 0;
+                        gap: 0;
+                    }
+                    .nav-links.active {
+                        display: flex !important;
+                    }
+                    .nav-links li {
+                        width: 100%;
+                    }
+                    .nav-links a {
+                        display: block;
+                        padding: 1rem 2rem;
+                        width: 100%;
+                    }
+                }
+            `;
+            document.head.appendChild(mobileStyles);
+            
+            // Insert mobile menu button
+            nav.appendChild(mobileMenuBtn);
+            
+            // Toggle mobile menu
+            mobileMenuBtn.addEventListener('click', () => {
+                navLinks.classList.toggle('active');
+                mobileMenuBtn.innerHTML = navLinks.classList.contains('active') ? '✕' : '☰';
+            });
+            
+            // Close mobile menu when clicking on links
+            navLinks.querySelectorAll('a').forEach(link => {
+                link.addEventListener('click', () => {
+                    navLinks.classList.remove('active');
+                    mobileMenuBtn.innerHTML = '☰';
+                });
+            });
+        };
+        
+        // Initialize mobile menu
+        createMobileMenu();
+        
+        // Add loading animation
+        window.addEventListener('load', () => {
+            document.body.style.opacity = '1';
+        });
+        
+        // Initialize with loading state
+        document.body.style.opacity = '0';
+        document.body.style.transition = 'opacity 0.3s ease';
+    </script>
+</body>
+</html>
