@@ -755,7 +755,7 @@
                     </div>
                 </div>
 
-                <form style="background: #f8fafc; padding: 2rem; border-radius: 12px;">
+                <form action="https://formspree.io/f/xkgrddza" method="POST" style="background: #f8fafc; padding: 2rem; border-radius: 12px;">
                     <div class="form-group">
                         <label for="name">Full Name</label>
                         <input type="text" id="name" name="name" required>
