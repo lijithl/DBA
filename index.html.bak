@@ -816,24 +816,6 @@
             });
         });
 
-        // Form submission handler
-        document.querySelector('form').addEventListener('submit', function(e) {
-            e.preventDefault();
-            
-            // Get form data
-            const formData = new FormData(this);
-            const data = Object.fromEntries(formData);
-            
-            // Simple validation
-            if (!data.name || !data.email || !data.message) {
-                alert('Please fill in all required fields.');
-                return;
-            }
-            
-            // Simulate form submission
-            alert('Thank you for your message! I will get back to you within 24 hours.');
-            this.reset();
-        });
 
         // Add animation on scroll
         const observerOptions = {
