@@ -835,6 +835,17 @@
             color: white;
         }
 
+        .form-group select {
+            background: rgba(15, 23, 42, 0.9);
+            color: white;
+        }
+
+        .form-group select option {
+            background: #1e293b;
+            color: white;
+            padding: 0.5rem;
+        }
+
         .form-group input::placeholder,
         .form-group textarea::placeholder {
             color: rgba(255, 255, 255, 0.5);
@@ -997,13 +1008,13 @@
                     <img src="LijithPhoto.PNG" alt="Lijith Lakshmanan" style="width: 100%; height: 100%; border-radius: 50%; object-fit: cover;">
                 </div>
                 <h1>Lijith Lakshmanan</h1>
-                <div class="typewriter">Senior Database Administrator / Developer (SQL Server)</div>
+                <div class="typewriter">Technical Architect & Senior SQL Database Administrator</div>
                 <p class="location">
-                    <span class="location-pin">📍</span> Bangalore, India
+                    <span class="location-pin">📍</span> Bangalore, Karnataka, India
                 </p>
                 <p style="font-size: 1.2rem; margin-bottom: 2rem; opacity: 0.9; line-height: 1.8;">
-                    9 years of expertise in SQL Server database administration, optimization, and development. 
-                    Transforming data challenges into scalable solutions for leading MNCs.
+                    8+ years of expertise in SQL Server Database Administration, T-SQL Development, PowerShell Scripting, and Azure Cloud Technologies. 
+                    Delivering enterprise-level database solutions for complex production environments.
                 </p>
                 <div class="cta-buttons">
                     <a href="#contact" class="btn btn-primary">Get In Touch</a>
@@ -1020,7 +1031,7 @@
             <div style="display: grid; grid-template-columns: 1fr; gap: 2rem;">
                 <div>
                     <p style="font-size: 1.2rem; margin-bottom: 2rem; opacity: 0.9; line-height: 1.8;">
-                        With 9 years of dedicated experience in the software services industry, I specialize in SQL Server database administration and development. I've had the privilege of working with leading multinational corporations, delivering robust database solutions that drive business success and operational excellence.
+                        With 8+ years of dedicated experience in the software services industry, I specialize in SQL Server database administration and development. I've had the privilege of working with leading multinational corporations, delivering robust database solutions that drive business success and operational excellence.
                     </p>
                     
                     <div class="skills-grid">
@@ -1113,7 +1124,7 @@
             <div class="pricing-grid">
                 <div class="pricing-card">
                     <h3>Strategic Consultation</h3>
-                    <div class="price">$150</div>
+                    <div class="price">$100</div>
                     <div class="period">per hour</div>
                     <ul class="pricing-features">
                         <li>Comprehensive Database Assessment</li>
@@ -1164,19 +1175,19 @@
             <h2>Client Success Stories</h2>
             <div class="testimonials-grid">
                 <div class="testimonial-card">
-                    <p style="opacity: 0.9; line-height: 1.7; font-size: 1.1rem;">Lijith completely transformed our database performance. Our query response times improved by 70% after his optimization work. His expertise in SQL Server is exceptional, and his ability to explain complex concepts made the entire process smooth and educational for our team.</p>
+                    <p style="opacity: 0.9; line-height: 1.7; font-size: 1.1rem;">Lijith's expertise in SQL Server administration is exceptional. His work on our Always On Availability Groups implementation reduced our downtime by 95%. His ability to optimize complex T-SQL queries and implement robust backup strategies made our database infrastructure bulletproof.</p>
                     <div class="testimonial-author">Sarah Johnson</div>
-                    <div class="testimonial-role">IT Director, TechCorp Solutions</div>
+                    <div class="testimonial-role">IT Director, ABB Project Team</div>
                 </div>
                 <div class="testimonial-card">
-                    <p style="opacity: 0.9; line-height: 1.7; font-size: 1.1rem;">The database migration project was handled flawlessly. Zero downtime, complete data integrity, and excellent post-migration support. Lijith's attention to detail and proactive communication made this our most successful migration ever. Highly recommended for enterprise projects.</p>
+                    <p style="opacity: 0.9; line-height: 1.7; font-size: 1.1rem;">Working with Lijith on our Azure migration was seamless. His deep understanding of both on-premises SQL Server and Azure PaaS helped us migrate 50+ databases without any data loss. His PowerShell automation scripts saved us months of manual work.</p>
                     <div class="testimonial-author">Michael Chen</div>
-                    <div class="testimonial-role">CTO, DataFlow Industries</div>
+                    <div class="testimonial-role">Senior Manager, Abacus Pvt. Ltd.</div>
                 </div>
                 <div class="testimonial-card">
-                    <p style="opacity: 0.9; line-height: 1.7; font-size: 1.1rem;">Working with Lijith was a game-changer for our development team. His training sessions on Azure database services upskilled our entire team. His real-world experience and practical approach to teaching is outstanding. Worth every investment!</p>
+                    <p style="opacity: 0.9; line-height: 1.7; font-size: 1.1rem;">Lijith's technical leadership on our PSYS project was outstanding. Managing 50 servers across multiple locations requires exceptional skills. His proactive monitoring and disaster recovery strategies ensured 99.9% uptime. Well-deserved Budding Employee Award!</p>
                     <div class="testimonial-author">Priya Sharma</div>
-                    <div class="testimonial-role">Lead Developer, InnovateTech</div>
+                    <div class="testimonial-role">Project Manager, SLK Software Services</div>
                 </div>
             </div>
         </section>
@@ -1201,15 +1212,15 @@
                         <div class="icon">📱</div>
                         <div>
                             <strong style="color: #60a5fa;">Phone</strong><br>
-                            <span style="opacity: 0.9;">+91 72591 63713</span>
+                            <span style="opacity: 0.9;">+91-7259163713</span>
                         </div>
                     </div>
                     
-                    <div class="contact-item">
+                     <div class="contact-item">
                         <div class="icon">💼</div>
                         <div>
                             <strong style="color: #60a5fa;">LinkedIn</strong><br>
-                            <span style="opacity: 0.9;">www.linkedin.com/in/lijith-lakshmanan</span>
+                            <a href="https://linkedin.com/in/lijith-lakshmanan" target="_blank" style="color: #34d399; text-decoration: none; opacity: 0.9; transition: all 0.3s ease;" onmouseover="this.style.color='#60a5fa'; this.style.textDecoration='underline'" onmouseout="this.style.color='#34d399'; this.style.textDecoration='none'">linkedin.com/in/lijith-lakshmanan</a>
                         </div>
                     </div>
                     
@@ -1267,11 +1278,12 @@
     <footer>
         <div class="container">
             <p style="font-size: 1.1rem; margin-bottom: 0.5rem;">&copy; 2025 Lijith Lakshmanan. All rights reserved.</p>
-            <p style="opacity: 0.8; font-size: 1rem;">Senior Database Administrator / Developer | Transforming Data Challenges into Scalable Solutions</p>
+            <p style="opacity: 0.8; font-size: 1rem;">Technical Architect & SQL Database Administrator | Transforming Data Challenges into Scalable Solutions</p>
             <div style="margin-top: 1rem; display: flex; justify-content: center; gap: 2rem; flex-wrap: wrap;">
-                <span style="color: #60a5fa;">🗄️ SQL Server Expert</span>
-                <span style="color: #34d399;">☁️ Azure Certified</span>
-                <span style="color: #a78bfa;">🚀 Performance Specialist</span>
+                <span style="color: #60a5fa;">🏆 Azure DP-300 Certified</span>
+                <span style="color: #34d399;">☁️ Cloud Migration Expert</span>
+                <span style="color: #a78bfa;">⚡ Performance Specialist</span>
+                <span style="color: #fbbf24;">🔧 Technical Architect</span>
             </div>
         </div>
     </footer>
